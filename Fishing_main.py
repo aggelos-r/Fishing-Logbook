@@ -16,7 +16,7 @@ place4 = {str(i): f"Fishing/Places/place4_{i}.txt" for i in range(1, max_trips+1
 place5 = {str(i): f"Fishing/Places/place5_{i}.txt" for i in range(1, max_trips+1)} #Porto Germeno
 
 place1_images = {
-    "1": ["Fishing/Images/IMG-80228dcffa813ad34957b11eba48b94a-V.jpg", "Fishing/Images/IMG20250619235703.jpg"],
+    "1": [],
     "2": [],
     "3": [],
     "4": [],
@@ -80,8 +80,8 @@ place2_images = {
     "30": []
 }
 place3_images = {
-    "1": ["Fishing/Images/IMG20250609210910.jpg", "Fishing/Images/IMG20250609210919.jpg"],
-    "2": ["Fishing/Images/IMG20250629080445.jpg", "Fishing/Images/IMG20250629080455.jpg", "Fishing/Images/IMG20250629091141.jpg", "Fishing/Images/IMG20250629091152.jpg", "Fishing/Images/IMG20250629120054.jpg", "Fishing/Images/IMG20250629120722.jpg", "Fishing/Images/IMG20250629121437.jpg", "Fishing/Images/IMG20250629121445.jpg", "Fishing/Images/IMG20250629144636.jpg"],
+    "1": [],
+    "2": [],
     "3": [],
     "4": [],
     "5": [],
