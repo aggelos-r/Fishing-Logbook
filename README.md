@@ -16,7 +16,7 @@ The app covers five predefined fishing locations that you can rename depending o
 - Fishing_place_4
 - Fishing_place_5
 
-It supports photo viewing via the Pillow library. All fishing trip information is saved in organized text files per trip and location. To add photos, you need to manually place them in the correct spot of the corresponding dictionary. The picture dictionaries are created by the program. To add a photo, for example, in the first fishing place for the third trip, you use: place1_images["3"].append("photo1.jpg"). To add multiple photos at once, you use: place1_images["3"].extend(["photo1.jpg", "photo2.jpg"]).
+It supports photo viewing via the Pillow library. All fishing trip information is saved in organized text files per trip and location. To add photos, you need to manually place them in the correct spot of the corresponding dictionary. The picture dictionaries are created by the program. To add a photo, for example, in the first fishing place for the third trip, you use: place1_images["3"].append("photo1.jpg"). To add multiple photos for a single place, you use: place1_images["3"].extend(["photo1.jpg", "photo2.jpg"]).
 
 The interface is simple and terminal-based, with input validation and color-coded output for better readability.
 
