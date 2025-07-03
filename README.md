@@ -47,7 +47,7 @@ Fishing/
         from pathlib import Path
 
         def create_place_files():
-            base_path = Path("**YOYR FILE PATH**")
+            base_path = Path("**YOUR FILE PATH**")
             base_path.mkdir(parents=True, exist_ok=True)
 
             for i in range(1, 31):
