@@ -9,172 +9,17 @@ GREEN = "\033[32m"
 ORANGE = "\033[38;5;208m"
 
 max_trips=30
-place1 = {str(i): f"Fishing/Places/place1_{i}.txt" for i in range(1, max_trips+1)} #Psatha
-place2 = {str(i): f"Fishing/Places/place2_{i}.txt" for i in range(1, max_trips+1)} #Rocks below Alkyonides
-place3 = {str(i): f"Fishing/Places/place3_{i}.txt" for i in range(1, max_trips+1)} #Rocks left of Sterna
-place4 = {str(i): f"Fishing/Places/place4_{i}.txt" for i in range(1, max_trips+1)} #Agios Vasilios
-place5 = {str(i): f"Fishing/Places/place5_{i}.txt" for i in range(1, max_trips+1)} #Porto Germeno
+place1 = {str(i): f"Fishing/Places/place1_{i}.txt" for i in range(1, max_trips+1)} 
+place2 = {str(i): f"Fishing/Places/place2_{i}.txt" for i in range(1, max_trips+1)} 
+place3 = {str(i): f"Fishing/Places/place3_{i}.txt" for i in range(1, max_trips+1)} 
+place4 = {str(i): f"Fishing/Places/place4_{i}.txt" for i in range(1, max_trips+1)} 
+place5 = {str(i): f"Fishing/Places/place5_{i}.txt" for i in range(1, max_trips+1)} 
 
-place1_images = {
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [],
-    "5": [],
-    "6": [],
-    "7": [],
-    "8": [],
-    "9": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": [],
-    "20": [],
-    "21": [],
-    "22": [],
-    "23": [],
-    "24": [],
-    "25": [],
-    "26": [],
-    "27": [],
-    "28": [],
-    "29": [],
-    "30": []
-}
-place2_images = {
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [],
-    "5": [],
-    "6": [],
-    "7": [],
-    "8": [],
-    "9": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": [],
-    "20": [],
-    "21": [],
-    "22": [],
-    "23": [],
-    "24": [],
-    "25": [],
-    "26": [],
-    "27": [],
-    "28": [],
-    "29": [],
-    "30": []
-}
-place3_images = {
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [],
-    "5": [],
-    "6": [],
-    "7": [],
-    "8": [],
-    "9": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": [],
-    "20": [],
-    "21": [],
-    "22": [],
-    "23": [],
-    "24": [],
-    "25": [],
-    "26": [],
-    "27": [],
-    "28": [],
-    "29": [],
-    "30": []
-}
-place4_images = {
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [],
-    "5": [],
-    "6": [],
-    "7": [],
-    "8": [],
-    "9": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": [],
-    "20": [],
-    "21": [],
-    "22": [],
-    "23": [],
-    "24": [],
-    "25": [],
-    "26": [],
-    "27": [],
-    "28": [],
-    "29": [],
-    "30": []
-}
-place5_images = {
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [],
-    "5": [],
-    "6": [],
-    "7": [],
-    "8": [],
-    "9": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": [],
-    "20": [],
-    "21": [],
-    "22": [],
-    "23": [],
-    "24": [],
-    "25": [],
-    "26": [],
-    "27": [],
-    "28": [],
-    "29": [],
-    "30": []
-}
+place1_images = {str(i): [] for i in range(1, max_trips + 1)}
+place2_images = {str(i): [] for i in range(1, max_trips + 1)}
+place3_images = {str(i): [] for i in range(1, max_trips + 1)}
+place4_images = {str(i): [] for i in range(1, max_trips + 1)}
+place5_images = {str(i): [] for i in range(1, max_trips + 1)}
 
 Fishing={"1":place1,
          "2":place2,
@@ -189,17 +34,21 @@ Fishing_images={"1":place1_images,
                 "5":place5_images}
 
 def clear_terminal():
-    os.system('cls')
+    if os.name == 'nt':  
+        os.system('cls')
+    else:  
+        os.system('clear')
+
 
 def find_fishing_trip(AA,BB,mt):
     while True:
         clear_terminal()
         print(f"{ORANGE}Select the location where the fishing trip took place:{RESET}")
-        print(f"1. Psatha")
-        print(f"2. Rocks below Alkyonides")
-        print(f"3. Rocks left of Sterna")
-        print(f"4. Agios Vasilios")
-        print(f"5. Porto Germeno")
+        print(f"1. Fishing_place_1")
+        print(f"2. Fishing_place_2")
+        print(f"3. Fishing_place_3")
+        print(f"4. Fishing_place_4")
+        print(f"5. Fishing_place_5")
         print(f"0. Return to the main MENU")
         choice=input(f"{BLUE}Make a choice: {RESET}")
         while choice not in ["0","1","2","3","4","5"]:
@@ -228,7 +77,7 @@ def find_fishing_trip(AA,BB,mt):
                     x="a"
                     while x!="":
                         clear_terminal()
-                        print(f"{ORANGE}Πληροφοριες για το ψαρεμα:{RESET}")
+                        print(f"{ORANGE}Information about the fishing trip:{RESET}")
                         with open(AA[choice][choice1],"r",encoding="utf-8") as file:
                             print(file.read())
                         print(" ")
@@ -256,6 +105,7 @@ def find_fishing_trip(AA,BB,mt):
                     print(F"{RED}No fishing trips saved for this location, choose another{RESET}")
                     time.sleep(2)
             except FileNotFoundError:
+                print("")
                 print(f"{RED}A FILE DOES NOT EXIST{RESET}")
                 time.sleep(2)
         else:
@@ -264,11 +114,11 @@ def find_fishing_trip(AA,BB,mt):
 def add_fishing_trip(AA,BB,mt):
     clear_terminal()
     print(f"{ORANGE}Select the location where the fishing trip took place:{RESET}")
-    print(f"1. Psatha")
-    print(f"2. Rocks below Alkyonides")
-    print(f"3. Rocks left of Sterna")
-    print(f"4. Agios Vasilios")
-    print(f"5. Porto Germeno")
+    print(f"1. Fishing_place_1")
+    print(f"2. Fishing_place_2")
+    print(f"3. Fishing_place_3")
+    print(f"4. Fishing_place_4")
+    print(f"5. Fishing_place_5")
     print(f"If the location is not in the MENU, press << 0 >> to return to the main MENU")
     choice=input(f"{BLUE}Make a choice: {RESET}")
     while choice not in ["0","1","2","3","4","5"]:
@@ -296,6 +146,7 @@ def add_fishing_trip(AA,BB,mt):
             print(F"{GREEN}The information for this fishing trip was saved{RESET}")
             time.sleep(2)
         except FileNotFoundError:
+            print("")
             print(f"{RED}A FILE DOES NOT EXIST{RESET}")
             time.sleep(2)
 

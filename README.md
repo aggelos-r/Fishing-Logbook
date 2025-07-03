@@ -8,15 +8,15 @@ You can also browse previous fishing trips and view any associated images from e
 
 ## Features
 
-The app covers five predefined fishing locations:
+The app covers five predefined fishing locations that you can rename depending on the places you fish:
 
-- Psatha  
-- Rocks below Alkyonides  
-- Rocks left of Sterna  
-- Agios Vasilios  
-- Porto Germeno
+- Fishing_place_1  
+- Fishing_place_2  
+- Fishing_place_3 
+- Fishing_place_4
+- Fishing_place_5
 
-It supports photo viewing via the Pillow library. All fishing trip information is saved in organized text files per trip and location.
+It supports photo viewing via the Pillow library. All fishing trip information is saved in organized text files per trip and location. To add photos, you need to manually place them in the correct spot of the corresponding dictionary. The picture dictionaries are created by the program. To add a photo, for example, in the first fishing place for the third trip, you use: place1_images["3"].append("photo1.jpg"). To add multiple photos at once, you use: place1_images["3"].extend(["photo1.jpg", "photo2.jpg"]).
 
 The interface is simple and terminal-based, with input validation and color-coded output for better readability.
 
@@ -38,9 +38,26 @@ Make sure your folders look like this:
 
 ```
 Fishing/
-├── Places/        # contains files like place1_1.txt, place1_2.txt, … place5_30.txt
+├── Places/        # contains files like place1_1.txt, place1_2.txt, ..... , place5_30.txt
 ├── Images/        # contains your image files
 ```
+
+**Use this code to easily create the files for each place.:
+
+        from pathlib import Path
+
+        def create_place_files():
+            base_path = Path("**YOYR FILE PATH**")
+            base_path.mkdir(parents=True, exist_ok=True)
+
+            for i in range(1, 31):
+                file_path = base_path / f"placeX_{i}.txt"
+                file_path.touch(exist_ok=True) 
+                print(f"Created: {file_path}")
+
+        if __name__ == "__main__":
+            create_place_files()
+
 
 Each `placeX_Y.txt` file corresponds to trip number Y at location X.
 
@@ -65,4 +82,4 @@ python your_script_name.py
 
 ## License
 
-This project is open-source and free to use. Attribution is appreciated but not required.
+This project is open-source and free to use. Attribution is appreciated.
